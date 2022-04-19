@@ -1,38 +1,238 @@
-.App {
+body {
+  background-color: rgba(227, 231, 235, 0.897);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background-color: chocolate;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  padding: 4px;
+  padding-left: 15px;
+  color: azure;
+  margin-top: 15px;
+  margin-left: 15px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+main {
+  display: grid;
+  width: 70%;
+  height: 65vh;
+  margin: 0 auto;
+  margin-top: 30px;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 60% 80px;
+}
+
+.container3 {
+  margin-top: 180px;
+  grid-column: 1 / 3;
+}
+
+h3 {
+  color: rgb(126, 130, 134);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.text {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgb(126, 130, 134);
+}
+
+.container1 {
+  padding: 25px 25px 25px 200px;
+}
+
+.circlebottom {
+  padding: 18px;
+  width: 11vw;
+  height: 11vw;
+  position: absolute;
+  top: 27%;
+  left: 24vw;
+  border-radius: 50%;
+  margin-bottom: -130px;
+  background-color: rgba(148, 145, 140, 0.5);
+  z-index: 1;
+}
+
+.circleleft {
+  padding: 18px;
+  width: 11vw;
+  height: 11vw;
+  position: absolute;
+  top: 100px;
+  border-radius: 50%;
+  margin-left: -130px;
+  background-color: rgba(148, 145, 140, 0.5);
+  z-index: 2;
+}
+
+.circleright {
+  padding: 18px;
+  width: 11vw;
+  height: 11vw;
+  position: absolute;
+  top: 100px;
+  border-radius: 50%;
+  margin-left: 17px;
+  background-color: rgba(148, 145, 140, 0.5);
+  z-index: 3;
+  text-align: right;
+}
+
+.circlebottomtext,
+.circlelefttext,
+.circlerighttext {
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 0.004em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.circlebottomtext {
   text-align: center;
+  position: relative;
+  top: 73px;
+}
+.circlerighttext {
+  position: relative;
+  top: 55px;
+  left: -15px;
+  z-index: 5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.circlelefttext {
+  width: 70%;
+  display: inline-block;
+  position: relative;
+  top: 55px;
+  left: 55px;
+  z-index: 5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.circletop1 {
+  padding: 18px;
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+  top: 49%;
+  left: 63vw;
+  border-radius: 50%;
+  margin-bottom: -130px;
+  background-color: rgba(148, 145, 140, 0.5);
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.circleleft1 {
+  padding: 18px;
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+  top: 55%;
+  left: 69vw;
+  border-radius: 50%;
+  margin-left: -130px;
+  background-color: rgba(148, 145, 140, 0.5);
+  z-index: 2;
+}
+
+.circleright1 {
+  padding: 18px;
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+  top: 55%;
+  left: 64vw;
+  border-radius: 50%;
+  margin-left: 17px;
+  background-color: rgba(148, 145, 140, 0.5);
+  z-index: 3;
+  text-align: right;
+}
+
+.stepper-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.stepper-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
+}
+
+.step-name {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgb(126, 130, 134);
+}
+
+.stepper-item::before {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  top: 7px;
+  left: -50%;
+  z-index: 2;
+}
+
+.stepper-item::after {
+  position: absolute;
+  content: "";
+  border-bottom: 2px solid #ccc;
+  width: 100%;
+  top: 7px;
+  left: 50%;
+  z-index: 2;
+}
+
+.stepper-item .step-counter {
+  position: relative;
+  z-index: 5;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: chocolate;
+  margin-bottom: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+.stepper-item:first-child::before {
+  content: none;
+}
+.stepper-item:last-child::after {
+  content: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.images {
+  width: 100%;
+  height: 23.5vh;
+  background-color: white;
+}
+
+.images > h2 {
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.imagesDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+img {
+  width: 150px;
+  height: 150px;
 }
